@@ -10,8 +10,12 @@ bin/
 target
 
 # ignore eclipse files
-.project
-.classpath
 .settings
 .metadata
 .mymetadata
+.classpath
+.project
+
+# ignore idea files
+.idea
+*.iml
