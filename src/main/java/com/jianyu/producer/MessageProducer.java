@@ -37,16 +37,14 @@ public class MessageProducer {
 		// amqpTemplate2 关联了 MY_TOPIC_EXCHANGE
 
 		// Exchange 为 direct 模式，直接指定routingKey
-		// 只有amqpTemplate发送能收到
+		// 在没有指定交换机的情况下，默认发送到template关联的交换机
 		amqpTemplate.convertAndSend("FirstKey", "[Direct,FirstKey] "+message);
 		amqpTemplate.convertAndSend("SecondKey", "[Direct,SecondKey] "+message);
 		
         // Exchange模式为topic，通过topic匹配关心该主题的队列
-		// 只有amqpTemplate2发送能收到
 		amqpTemplate2.convertAndSend("msg.Third.send","[Topic,msg.Third.send] "+message);
 		
 		// 广播消息，与Exchange绑定的所有队列都会收到消息，routingKey为空
-		// amqpTemplate和amqpTemplate2发送都能收到
 		amqpTemplate2.convertAndSend("MY_FANOUT_EXCHANGE",null,"[Fanout] "+message);
 	}
 
