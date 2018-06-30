@@ -13,7 +13,7 @@ import org.springframework.amqp.core.MessageListener;
  *       Better late than never. <br>
  */
 public class FourthConsumer implements MessageListener {
-	private Logger logger = LoggerFactory.getLogger(FirstConsumer.class);
+	private Logger logger = LoggerFactory.getLogger(FourthConsumer.class);
 
 	@Override
 	public void onMessage(Message message) {

@@ -1,8 +1,8 @@
 package com.jianyu.test;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.jianyu.producer.MessageProducer;
 
 public class RabbitTest {
@@ -22,6 +22,5 @@ public class RabbitTest {
 				e.printStackTrace();
 			}
 		}
-
 	}
 }
